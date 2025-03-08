@@ -7,14 +7,14 @@ void init_hex(hex* h, const char character, size_t offset) {
 	h->character = character;
 	h->translation = (char*)malloc(3);
 	set_translation(h);
-	h->offset = offset;
+	set_offset(h, offset);
 }
 
 void set_translation(hex* h) {
 	sprintf(h->translation, "%02X", h->character);
 }
 
-void change_translation(hex* h, const char* translation) {
+void change_translation(hex* h, char* const translation) {
 	h->translation = translation;
 }
 
